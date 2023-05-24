@@ -1,9 +1,8 @@
 "use strict"; // strick mode 사용하여 실수 방지
 import * as THREE from "./node_modules/three/build/three.module.js";
-import Stats from './node_modules/three/examples/jsm/libs/stats.module.js';
+// import Stats from './node_modules/three/examples/jsm/libs/stats.module.js';
 import { GUI } from './node_modules/three/examples/jsm/libs/lil-gui.module.min.js';
 import { OrbitControls } from "./node_modules/three/examples/jsm/controls/OrbitControls.js";
-import { GLTFLoader } from "./node_modules/three/examples/jsm/loaders/GLTFLoader.js";
 
 let group;
 let container, stats;
@@ -101,7 +100,7 @@ function init() {
     transparent: true,
     sizeAttenuation: false
   } );
-  pMaterial.color = new THREE.Color('#'+Math.floor(Math.random()*16777215).toString(16));
+  pMaterial.color = new THREE.Color(Math.random(), Math.random(), Math.random());
 
   particles = new THREE.BufferGeometry();
   particlePositions = new Float32Array( maxParticleCount * 3 );
@@ -197,7 +196,7 @@ function animate() {
     particlePositions[ i * 3 + 1 ] += particleData.velocity.y;
     particlePositions[ i * 3 + 2 ] += particleData.velocity.z;
 
-    pMaterial.color = new THREE.Color('#'+Math.floor(Math.random()*16777215).toString(16));
+    pMaterial.color = new THREE.Color(Math.random(), Math.random(), Math.random());
 
     if ( particlePositions[ i * 3 + 1 ] < - rHalf || particlePositions[ i * 3 + 1 ] > rHalf )
       particleData.velocity.y = - particleData.velocity.y;
