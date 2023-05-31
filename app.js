@@ -1,8 +1,7 @@
 "use strict"; // strick mode 사용하여 실수 방지
-import * as THREE from "./node_modules/three/build/three.module.js";
-// import Stats from './node_modules/three/examples/jsm/libs/stats.module.js';
-import { GUI } from './node_modules/three/examples/jsm/libs/lil-gui.module.min.js';
-import { OrbitControls } from "./node_modules/three/examples/jsm/controls/OrbitControls.js";
+import * as THREE from 'three';
+import { GUI } from 'three/addons/libs/lil-gui.module.min.js'
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 let group;
 let container, stats;
